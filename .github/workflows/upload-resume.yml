@@ -11,22 +11,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 👇 Add this step
+      - name: Verify GitHub Secrets
+        run: |
+          [ -n "${{ secrets.NAUKRI_USERNAME }}" ] && echo "USERNAME OK" || echo "USERNAME EMPTY"
+          [ -n "${{ secrets.NAUKRI_PASSWORD }}" ] && echo "PASSWORD OK" || echo "PASSWORD EMPTY"
+          [ -n "${{ secrets.NAUKRI_PROFILE_ID }}" ] && echo "PROFILE_ID OK" || echo "PROFILE_ID EMPTY"
+
       - name: Update Naukri profile
         uses: Prateek-Wayne/naukri-resume-action@v1.3.1
-
         with:
           username: ${{ secrets.NAUKRI_USERNAME }}
           password: ${{ secrets.NAUKRI_PASSWORD }}
           profile_id: ${{ secrets.NAUKRI_PROFILE_ID }}
-
           resume_path: ./resumes/BeeraSaikumar-Resume.pdf
-
           profile_summary: >
             SOC Analyst with 4.5+ years of experience in SIEM monitoring,
-            incident response, Splunk, IBM QRadar, CrowdStrike Falcon, Microsoft
-            Sentinel, vulnerability management, malware analysis, and threat
-            hunting across enterprise environments.
-
+            incident response, Splunk, IBM QRadar, CrowdStrike Falcon,
+            Microsoft Sentinel, vulnerability management, malware analysis,
+            and threat hunting across enterprise environments.
           resume_headline: >
             SOC Analyst | Splunk | QRadar | CrowdStrike | Microsoft Sentinel |
             Incident Response | 4.8+ Years
