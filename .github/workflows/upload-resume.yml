@@ -17,6 +17,9 @@ jobs:
           password: ${{ secrets.NAUKRI_PASSWORD }}
           profile_id: ${{ secrets.NAUKRI_PROFILE_ID }}
           resume_path: |-
-            ./resumes/resume1.pdf
-          profile_summary: 'Your profile summary here ' # Optional: min 50 chars
-          resume_headline: 'Your resume headline here ' # Optional: max 250 chars
+            ./home/sai-exflow/nakuri/Naukri-resume-action/resumes/BeeraSaikumar-Resume.pdf/home/sai-exflow/nakuri/Naukri-resume-action/resumes/BeeraSaikumar-Resume.pdf
+          profile_summary: 'SOC Analyst with 4.5+ years of experience in security monitoring,
+                            SIEM, Splunk, QRadar, CrowdStrike Falcon, Microsoft Sentinel,
+                            incident response, threat hunting, vulnerability management,
+                            and log analysis across enterprise environments' # Optional: min 50 chars
+          resume_headline: 'SOC Analyst | Splunk | QRadar | CrowdStrike | Microsoft Sentinel |Incident Response | 4.8+ Years' # Optional: max 250 chars
